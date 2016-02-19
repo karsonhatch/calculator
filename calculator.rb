@@ -7,11 +7,6 @@ while @number != 'quit'
 		@number = gets.strip.downcase
 	end
 
-	def second_numb
-		puts"What is the Second Number?"
-		@number2 = gets.to_f
-	end
-
 	def op
 		puts "What operation would you like to perform?"
 		operation = gets.strip
@@ -28,24 +23,25 @@ while @number != 'quit'
 			when '/'
 				answer = @number.to_f / @number2.to_f
 				puts "The answer is #{answer}"
+		end
 				if @number2 == 0
 					puts "You can't divide by zero, bro."
-				end
-			else
+				else
 				puts "Invalid operation, please choose +, -, *, or /"
-		end
+				end
+				def second_numb
+					puts"What is the Second Number?"
+					@number2 = gets.to_f
+
+				end
 			puts "Do you want to keep going? Type 'Yes' to continue or quit to go to main menu."
     		input = gets.strip
     		if input == 'yes'
    			@number = answer
-   			second_numb
-   			op
    		end
 	end
-	first_numb
-	break if @number == 'quit'
-
-	second_numb
-
-	op
+break if @number == 'quit'
+   			first_numb
+   			op
+   			second_numb
 end
